@@ -1,11 +1,21 @@
 # Sugestão de commit
 
-**Summary**
-```text
-docs: planejar Olá Mundo de Jus 9 Verde
+## Repertório
+
+`jus9verde-jus9-tecnologia-juridica`
+
+## Summary
+
+```txt
+docs: alinhar Jus 9 Verde à governança simbólica
 ```
 
-**Description**
-```text
-Adiciona plano do Olá Mundo, com referência ao primeiro Olá Mundo do fundador, registro de participação por etapa, vínculo com equipe atual e notas de autoria/governança.
+## Description
+
+```txt
+Alinha Jus 9 Verde à governança simbólica, à maternidade/casa de nascimento simbólico da Charlie Echo e aos links de equipe/documentação.
+
+Inclui arquivos de governança, segurança, classificação de conteúdo, instruções para Charlie, .gitignore, .env.example, manifesto e sugestão de commit.
+
+Este commit encerra o Pacote Governança em pré-Mão na Massa e prepara a base para o próximo pacote de alterações visuais.
 ```

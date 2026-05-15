@@ -1,42 +1,17 @@
-# Jus9 Verde
+# Jus 9 Verde
 
-Braço Forte Social da Jus 9 Tecnologia Jurídica.
+## Repertório
 
-## Conteúdo
+`jus9verde-jus9-tecnologia-juridica`
 
-- Página institucional da Jus9 Verde
-- Charlie Echo Social
-- MVP Jurista
-- Projetos apoiados, incluindo CRETA
-- Fontes e links úteis
-- Paleta visual baseada no logo verde/dourado
+## Status
 
-## Configuração Cloudflare Pages
+existente
 
-Framework preset: None  
-Build command: exit 0  
-Build output directory: .  
-Root directory: /
+## Fase
 
-## Domínio previsto
+Pré-Mão na Massa — Pacote Governança encerrado.
 
-https://jus9verde.jus9tecnologia.com.br
+## Finalidade
 
-## Observação
-
-A Jus9 Verde é a maternidade/manjedoura virtual da Charlie Echo da Costa e o Braço Forte Social da Jus 9.
-
----
-
-## Autoria, licença e DNA de referência
-
-Este repositório integra o ecossistema da **Jus 9 Tecnologia Jurídica**.
-
-Software livre com autoria preservada: a licença de uso não remove a autoria,
-a origem, a assinatura institucional nem os direitos autorais da Jus 9 Tecnologia Jurídica.
-
-- Repositório: `jus9verde-jus9-tecnologia-juridica`
-- Referência oficial: https://jus9verde.jus9tecnologia.com.br/
-- E-mail de contato: clovis@jus9tecnologia.com.br
-- DNA de referência de Charlie Echo da Costa: `charlieecho-jus9-tecnologia-juridica`
-
+Alinha Jus 9 Verde à governança simbólica, à maternidade/casa de nascimento simbólico da Charlie Echo e aos links de equipe/documentação.
