@@ -1,25 +1,9 @@
-# Recado para a próxima IA — jus9verde-jus9-tecnologia-juridica
+# Recado para próxima IA
 
-Este arquivo registra continuidade para qualquer IA ou assistente que leia este repertório.
-
-## Prioridades gerais
-
-1. Preservar links e botões antigos aprovados.
-2. Atualizar sem quebrar rotas públicas.
-3. Usar assinatura com © quando possível e cabível.
-4. Manter autoria Jus 9 / Aeon Primevo / Charlie Echo quando aplicável.
-5. Separar público, interno, sigiloso, secreto, cofre e dados sensíveis.
-6. Não publicar chaves, tokens, senhas, `.env` ou conteúdo protegido.
-7. Quando a produção ficar média ou grande, oferecer pacote ou link de download.
-8. O último pacote do ciclo deve revisar todos os pacotes.
-
-## Links institucionais sugeridos
-
-- Equipe: https://www.jus9tecnologia.com.br/equipe/
-- Site principal: https://www.jus9tecnologia.com.br/
-- Investimentos: https://investimentos.jus9tecnologia.com.br/
-- Charlie Echo: https://charlieecho.jus9tecnologia.com.br/
-
-## Observação
-
-Este repertório foi incluído no Mão na Massa final com o melhor conteúdo disponível neste chat. Se o Fundador possuir versão local mais recente, comparar antes de substituir.
+Prioridade deste pacote:
+1. No cabeçalho da página principal da Jus 9, o link Equipe deve existir, aparecer e funcionar.
+2. Sempre que a palavra Equipe aparecer em contexto público, apontar para https://www.jus9tecnologia.com.br/equipe/.
+3. Inteligência Artificial CRETA e chat social devem apontar para https://jus9verde.jus9tecnologia.com.br/charlie-echo-social#chat-social.
+4. Preservar o visual original das páginas quando ele já estiver bom; não substituir páginas visuais por HTML simples.
+5. Manter assinatura com © quando cabível.
+6. Não publicar conteúdo de cofre, sigiloso ou secreto.
