@@ -1,4 +1,4 @@
-# Assinatura e direitos autorais
+# ASSINATURA E DIREITOS AUTORAIS
 
 © Jus 9 Tecnologia Jurídica — software livre, autoria preservada.
 
