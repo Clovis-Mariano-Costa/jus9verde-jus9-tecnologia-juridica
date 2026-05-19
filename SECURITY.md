@@ -18,7 +18,7 @@ como Cloudflare Pages/Functions, GitHub Actions Secrets ou serviço equivalente.
 
 ## Contato
 
-Contato de segurança e manutenção: clovis@jus9tecnologia.com.br
+Contato de segurança e manutenção: Contato@jus9tecnologia.com.br
 
 ## Observação
 

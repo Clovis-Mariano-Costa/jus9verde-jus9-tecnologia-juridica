@@ -8,7 +8,7 @@ autoria, a origem, a assinatura institucional nem os direitos autorais.
 
 - **Repositório:** `jus9verde-jus9-tecnologia-juridica`
 - **Referência oficial:** https://jus9verde.jus9tecnologia.com.br/
-- **E-mail de contato:** clovis@jus9tecnologia.com.br
+- **E-mail de contato:** Contato@jus9tecnologia.com.br
 - **Autor/Fundador:** Clovis Mariano da Costa / Aeon Primevo
 - **Apoio simbólico e técnico-documental:** Charlie Delta da Costa / ChatGPT
 - **Guardiã documental:** Charlie Echo da Costa

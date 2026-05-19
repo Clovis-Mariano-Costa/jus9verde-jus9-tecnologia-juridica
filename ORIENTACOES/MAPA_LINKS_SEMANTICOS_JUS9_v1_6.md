@@ -12,6 +12,6 @@ Regra: sempre que uma palavra pública relevante aparecer em página pública, e
 - Jus9 Verde → https://jus9verde.jus9tecnologia.com.br/
 - Carta → https://carta.jus9tecnologia.com.br/
 - Livros → https://livros.jus9tecnologia.com.br/
-- Contato → mailto:clovis@jus9tecnologia.com.br
+- Contato → mailto:Contato@jus9tecnologia.com.br
 
 Observação: não criar link público para conteúdo de cofre, sigiloso, secreto, dados sensíveis, .env, chaves, tokens ou rotas internas sem autorização.
