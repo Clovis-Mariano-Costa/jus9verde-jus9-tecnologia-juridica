@@ -63,3 +63,19 @@ button,input,select,textarea{max-width:100%}
   .grid,.grid2,.grid-2,.grid-3,.grid-4,.cards3,.profile-grid,.demo-grid,.demo-grid-2,.workbench,.timeline,.footer-grid{grid-template-columns:1fr!important;}
   table{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
 }
+
+/* Ajuste PWA / primeira dobra mobile — Jus 9 Verde */
+@media(max-width:760px){
+  .hero{padding:30px 0 30px;}
+  h1{font-size:clamp(2rem,12vw,3.15rem);margin:12px 0;}
+  .lead{font-size:1.02rem;line-height:1.55;}
+  .hero-grid{gap:20px;}
+  .hero-card{padding:14px;border-radius:24px;max-width:280px;margin:0 auto;}
+  .hero-card img{max-height:220px;object-fit:contain;border-radius:18px;}
+}
+
+@media(max-width:420px){
+  .hero-card{max-width:220px;}
+  .hero-card img{max-height:170px;}
+  .btn{width:100%;margin:.25rem 0;}
+}
