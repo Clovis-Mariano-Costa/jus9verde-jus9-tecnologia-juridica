@@ -1,6 +1,6 @@
 {
-  "name": "Jus9 Verde",
-  "short_name": "Jus9 Verde",
+  "name": "Jus 9 Verde",
+  "short_name": "Jus 9 Verde",
   "description": "Braço Forte Social da Jus 9 Tecnologia Jurídica, com compromisso social, sustentabilidade, Charlie Echo Social, CRETA e projetos em implantação.",
   "lang": "pt-BR",
   "dir": "ltr",
@@ -31,7 +31,7 @@
     {
       "name": "Charlie Echo Social",
       "short_name": "Charlie Social",
-      "description": "Abrir Charlie Echo Social na Jus9 Verde.",
+      "description": "Abrir Charlie Echo Social na Jus 9 Verde.",
       "url": "/charlie-echo-social.html#chat-social",
       "icons": [{ "src": "/assets/img/favicon.png", "sizes": "192x192", "type": "image/png" }]
     },
@@ -45,7 +45,7 @@
     {
       "name": "Compromisso Social",
       "short_name": "Compromisso",
-      "description": "Abrir o compromisso social da Jus9 Verde.",
+      "description": "Abrir o compromisso social da Jus 9 Verde.",
       "url": "/compromisso-social.html",
       "icons": [{ "src": "/assets/img/favicon.png", "sizes": "192x192", "type": "image/png" }]
     },
