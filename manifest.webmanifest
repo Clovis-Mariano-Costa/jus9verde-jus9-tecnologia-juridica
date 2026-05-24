@@ -1,0 +1,60 @@
+{
+  "name": "Jus9 Verde",
+  "short_name": "Jus9 Verde",
+  "description": "Braço Forte Social da Jus 9 Tecnologia Jurídica, com compromisso social, sustentabilidade, Charlie Echo Social, CRETA e projetos em implantação.",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "id": "/?source=pwa",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "browser"],
+  "orientation": "portrait-primary",
+  "background_color": "#f3fbf5",
+  "theme_color": "#176b3a",
+  "categories": ["education", "lifestyle", "productivity"],
+  "icons": [
+    {
+      "src": "/assets/img/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/img/logo-jus9-verde.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Charlie Echo Social",
+      "short_name": "Charlie Social",
+      "description": "Abrir Charlie Echo Social na Jus9 Verde.",
+      "url": "/charlie-echo-social.html#chat-social",
+      "icons": [{ "src": "/assets/img/favicon.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Projetos sociais",
+      "short_name": "Projetos",
+      "description": "Abrir projetos e parcerias sociais em implantação.",
+      "url": "/projetos.html",
+      "icons": [{ "src": "/assets/img/favicon.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Compromisso Social",
+      "short_name": "Compromisso",
+      "description": "Abrir o compromisso social da Jus9 Verde.",
+      "url": "/compromisso-social.html",
+      "icons": [{ "src": "/assets/img/favicon.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Jus 9 Tecnologia Jurídica",
+      "short_name": "Jus 9",
+      "description": "Abrir o site principal da Jus 9 Tecnologia Jurídica.",
+      "url": "https://jus9tecnologia.com.br/",
+      "icons": [{ "src": "/assets/img/favicon.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}
