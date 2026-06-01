@@ -11,5 +11,6 @@ Criar navegacao reciproca entre as paginas de instalacao da Jus 9 Tecnologia Jur
 - Adicionado card dourado para instalar o App principal da Jus 9.
 - Adicionadas instrucoes para instalar a PWA pelo Safari no iPhone e iPad.
 - Atualizado o cache PWA da Jus 9 Verde.
+- Corrigido o fallback offline para nao responder HTML em pedidos de CSS, JavaScript ou imagens ausentes.
 - Versionada a referencia ao CSS para evitar exibicao com estilo antigo.
 - Criado teste estatico dos links e da configuracao PWA.
