@@ -1,9 +1,12 @@
-const CACHE_NAME = 'jus9verde-pwa-v1';
+const CACHE_NAME = 'jus9verde-pwa-v2-2026-06-01';
 const CORE_ASSETS = [
   '/',
   '/index.html',
+  '/instalar-app',
+  '/instalar-app.html',
   '/manifest.webmanifest',
   '/assets/css/style.css',
+  '/assets/css/visual-jus9-fase-final.css',
   '/assets/js/main.js',
   '/assets/img/favicon.png',
   '/assets/img/logo-jus9-verde.png'
