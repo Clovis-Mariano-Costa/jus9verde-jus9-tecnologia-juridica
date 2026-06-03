@@ -15,7 +15,24 @@
   }
   function clean(){ if(input) input.value=''; answer('Tela limpa. Conte o que precisa organizar quando quiser.'); input&&input.focus(); }
   function base(){ return (input&&input.value.trim())||''; }
+  function preferredLanguage(t){
+    const s=String(t||'').toLowerCase();
+    if(/\b(english|translate to english|in english|please|hello|thanks)\b/.test(s)) return 'en';
+    if(/\b(espanol|español|castellano|traducir|hola|gracias)\b/.test(s)) return 'es';
+    if(/\b(francais|français|bonjour|merci)\b/.test(s)) return 'fr';
+    return 'pt';
+  }
   function fallbackSocial(t){
+    const lang=preferredLanguage(t);
+    if(lang==='en') return t
+      ? 'Initial social response: I understood your situation. Please avoid sending sensitive data. Organize the request into facts, need, urgency and appropriate human support. If there is immediate risk, seek emergency help or the responsible human team.'
+      : 'Write a question or situation to receive initial social support.';
+    if(lang==='es') return t
+      ? 'Respuesta social inicial: entendi tu situacion. Evita enviar datos sensibles. Organiza el pedido en hechos, necesidad, urgencia y apoyo humano adecuado. Si hay riesgo inmediato, busca atencion de emergencia o el equipo responsable.'
+      : 'Escribe una pregunta o situacion para recibir apoyo social inicial.';
+    if(lang==='fr') return t
+      ? 'Reponse sociale initiale : j ai compris votre situation. Evitez d envoyer des donnees sensibles. Organisez la demande en faits, besoin, urgence et soutien humain approprie. En cas de risque immediat, cherchez une aide d urgence ou une equipe responsable.'
+      : 'Ecrivez une question ou une situation pour recevoir un premier soutien social.';
     return t
       ? 'Resposta social inicial: entendi sua situação. Evite enviar dados sensíveis. Organize o pedido em fatos, necessidade, urgência e apoio humano adequado. Se houver risco imediato, procure atendimento emergencial ou equipe responsável.'
       : 'Escreva uma pergunta ou situação para receber apoio social inicial.';
