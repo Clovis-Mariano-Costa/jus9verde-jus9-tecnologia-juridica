@@ -1,68 +1,25 @@
 (function(){
   const input=document.getElementById('social-question');
   const out=document.getElementById('social-response');
-  function escapeHtml(text){ return String(text||'').replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch])); }
-  function answer(text){
-    if(!out) return;
-    out.innerHTML=escapeHtml(text).replace(/https:\/\/[^\s<>"']+/g,raw=>{
-      let url=raw, suffix='';
-      while(/[),.;:!?]$/.test(url)){ suffix=url.slice(-1)+suffix; url=url.slice(0,-1); }
-      return '<a href="'+url+'" target="_blank" rel="noopener noreferrer">'+url+'</a>'+suffix;
-    }).replace(/\n/g,'<br>');
-  }
-  function externalLinksGuidance(){
-    return 'Diga qual site, orgao, tribunal, universidade, servico ou material publico voce procura. A Charlie Echo Social avaliara o contexto e priorizara fontes oficiais ou institucionais confiaveis, sem limitar a resposta a um catalogo fixo. URLs HTTPS aprovadas aparecem como links clicaveis.';
-  }
+  const scope='social';
+  function escapeHtml(text){ return String(text||'').replace(/[&<>\"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[ch]||ch)); }
+  function answer(text){ if(!out) return; out.innerHTML=escapeHtml(text).replace(/https:\/\/[^\s<>"']+/g,raw=>{ let url=raw,suffix=''; while(/[),.;:!?]$/.test(url)){ suffix=url.slice(-1)+suffix; url=url.slice(0,-1); } return '<a href="'+url+'" target="_blank" rel="noopener noreferrer">'+url+'</a>'+suffix; }).replace(/\n/g,'<br>'); }
+  function key(){ return 'jus9VerdeCharlieSocialRooms_v1'; }
+  function createRoom(title){ const now=new Date().toISOString(); return {id:'social-'+Date.now(),title:title||'Sala social',status:'active',createdAt:now,updatedAt:now,summary:'',currentTopic:'',lastUserIntent:'',messages:[]}; }
+  function loadRooms(){ try{ const parsed=JSON.parse(sessionStorage.getItem(key())||'null'); if(parsed&&parsed.activeId&&Array.isArray(parsed.rooms)&&parsed.rooms.length){ parsed.rooms.forEach(r=>{ if(!r.status) r.status='active'; }); return parsed; } }catch(e){} const first=createRoom('Sala social 1'); return {activeId:first.id,rooms:[first]}; }
+  function saveRooms(data){ try{ sessionStorage.setItem(key(),JSON.stringify(data)); }catch(e){} }
+  function activeRoom(){ const data=loadRooms(); let room=data.rooms.find(r=>r.id===data.activeId&&r.status!=='deleted')||data.rooms.find(r=>r.status!=='deleted'&&r.status!=='archived')||data.rooms.find(r=>r.status!=='deleted'); if(!room){ room=createRoom('Sala social 1'); data.rooms.unshift(room); } data.activeId=room.id; saveRooms(data); return room; }
+  function renderRooms(){ const list=document.querySelector('[data-room-list="social"]'); if(!list) return; const data=loadRooms(); list.innerHTML=data.rooms.filter(r=>r.status!=='deleted').map(r=>'<button class="chat-room-pill'+(r.id===data.activeId?' active':'')+(r.status==='archived'?' archived':'')+'" type="button" data-id="'+r.id+'">'+escapeHtml(r.status==='archived'?r.title+' (arquivada)':r.title)+'</button>').join(''); list.querySelectorAll('[data-id]').forEach(btn=>btn.addEventListener('click',()=>{ data.activeId=btn.dataset.id; saveRooms(data); renderRooms(); })); }
+  function summarize(room,t,a){ const recent=(room.messages||[]).slice(-10).map(m=>(m.role==='assistant'?'Charlie: ':'Usuario: ')+String(m.content||'').replace(/\s+/g,' ').slice(0,180)).join(' | '); room.currentTopic=(t||room.currentTopic||room.title).slice(0,120); room.lastUserIntent=(t||'').slice(0,240); room.summary=('Assunto ativo: '+room.currentTopic+'. Ultima pergunta: '+(t||'').slice(0,220)+'. Ultima resposta: '+(a||'').slice(0,220)+'. Historico recente: '+recent+'.').slice(0,1800); room.updatedAt=new Date().toISOString(); }
+  function remember(t,a){ const data=loadRooms(); const room=data.rooms.find(r=>r.id===data.activeId)||activeRoom(); if(t) room.messages.push({role:'user',content:t,createdAt:new Date().toISOString()}); if(a) room.messages.push({role:'assistant',content:a,createdAt:new Date().toISOString()}); room.messages=room.messages.slice(-24); summarize(room,t,a); saveRooms(data); renderRooms(); }
+  function context(t){ const room=activeRoom(); const recent=(room.messages||[]).slice(-16).map(m=>(m.role==='assistant'?'Charlie: ':'Usuario: ')+String(m.content||'').slice(0,700)).join('\n'); return (room.summary||recent)?'[MEMORIA CURTA DA SALA]\n'+(room.summary||'')+'\n'+recent+'\n\n[PERGUNTA ATUAL]\n'+t:t; }
+  function initRooms(){ renderRooms(); const n=document.querySelector('[data-room-new="social"]'), a=document.querySelector('[data-room-archive="social"]'), d=document.querySelector('[data-room-delete="social"]'); if(n)n.addEventListener('click',()=>{ const data=loadRooms(); const r=createRoom('Sala social '+(data.rooms.length+1)); data.rooms.unshift(r); data.activeId=r.id; saveRooms(data); renderRooms(); }); if(a)a.addEventListener('click',()=>{ const data=loadRooms(); const r=data.rooms.find(x=>x.id===data.activeId); if(!r)return; r.status=r.status==='archived'?'active':'archived'; const next=data.rooms.find(x=>x.status!=='deleted'&&x.status!=='archived'); if(r.status==='archived'&&next)data.activeId=next.id; saveRooms(data); renderRooms(); }); if(d)d.addEventListener('click',()=>{ const data=loadRooms(); const r=data.rooms.find(x=>x.id===data.activeId); if(!r||!confirm('Excluir esta sala local?'))return; r.status='deleted'; const next=data.rooms.find(x=>x.status!=='deleted'&&x.status!=='archived')||data.rooms.find(x=>x.status!=='deleted')||createRoom('Sala social 1'); if(!data.rooms.includes(next))data.rooms.unshift(next); data.activeId=next.id; saveRooms(data); renderRooms(); }); }
+  function externalLinksGuidance(){ return 'Diga qual site, orgao, tribunal, universidade, servico ou material publico voce procura. A Charlie Echo Social avaliara o contexto e priorizara fontes oficiais ou institucionais confiaveis, sem limitar a resposta a um catalogo fixo. URLs HTTPS aprovadas aparecem como links clicaveis.'; }
   function clean(){ if(input) input.value=''; answer('Tela limpa. Conte o que precisa organizar quando quiser.'); input&&input.focus(); }
   function base(){ return (input&&input.value.trim())||''; }
-  function preferredLanguage(t){
-    const s=String(t||'').toLowerCase();
-    if(/\b(english|translate to english|in english|please|hello|thanks)\b/.test(s)) return 'en';
-    if(/\b(espanol|español|castellano|traducir|hola|gracias)\b/.test(s)) return 'es';
-    if(/\b(francais|français|bonjour|merci)\b/.test(s)) return 'fr';
-    return 'pt';
-  }
-  function fallbackSocial(t){
-    const lang=preferredLanguage(t);
-    if(lang==='en') return t
-      ? 'Initial social response: I understood your situation. Please avoid sending sensitive data. Organize the request into facts, need, urgency and appropriate human support. If there is immediate risk, seek emergency help or the responsible human team.'
-      : 'Write a question or situation to receive initial social support.';
-    if(lang==='es') return t
-      ? 'Respuesta social inicial: entendi tu situacion. Evita enviar datos sensibles. Organiza el pedido en hechos, necesidad, urgencia y apoyo humano adecuado. Si hay riesgo inmediato, busca atencion de emergencia o el equipo responsable.'
-      : 'Escribe una pregunta o situacion para recibir apoyo social inicial.';
-    if(lang==='fr') return t
-      ? 'Reponse sociale initiale : j ai compris votre situation. Evitez d envoyer des donnees sensibles. Organisez la demande en faits, besoin, urgence et soutien humain approprie. En cas de risque immediat, cherchez une aide d urgence ou une equipe responsable.'
-      : 'Ecrivez une question ou une situation pour recevoir un premier soutien social.';
-    return t
-      ? 'Resposta social inicial: entendi sua situação. Evite enviar dados sensíveis. Organize o pedido em fatos, necessidade, urgência e apoio humano adequado. Se houver risco imediato, procure atendimento emergencial ou equipe responsável.'
-      : 'Escreva uma pergunta ou situação para receber apoio social inicial.';
-  }
-  async function callCharlieSocial(t){
-    try{
-      answer('Conectando com a API segura da Charlie Echo Social...');
-      const response=await fetch('https://charlieecho.jus9tecnologia.com.br/api/ia',{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({message:t,mode:'social'})
-      });
-      const data=await response.json().catch(()=>null);
-      if(response.ok&&data&&typeof data.answer==='string'&&data.answer.trim()){
-        answer(data.answer.trim());
-        return;
-      }
-      answer(fallbackSocial(t)+'\n\nObservação: API indisponível ou sem resposta textual reconhecida; mantive fallback local.');
-    }catch(error){
-      answer(fallbackSocial(t)+'\n\nObservação: API indisponível; mantive fallback local.');
-    }
-  }
-  document.querySelectorAll('[data-action]').forEach(btn=>btn.addEventListener('click',()=>{
-    const a=btn.dataset.action, t=base();
-    if(a==='limpar') return clean();
-    if(a==='falar') return answer('Entrada por voz será conectada em etapa segura. Por ora, escreva sua pergunta no campo.');
-    if(a==='organizar') return answer('Vamos organizar com prudência: 1) o que aconteceu; 2) o que você precisa; 3) quem pode ajudar humanamente; 4) quais documentos ou informações públicas são úteis; 5) qual próximo passo seguro.');
-    if(a==='humano') return answer('Pergunta para atendimento humano: "Olá, preciso de orientação sobre a seguinte situação: [resumo]. Quais documentos devo levar e qual é o próximo passo adequado?"');
-    if(a==='links') return answer(externalLinksGuidance());
-    if(a==='perguntar') return t?callCharlieSocial(t):answer(fallbackSocial(t));
-  }));
+  function fallbackSocial(t){ const room=activeRoom(); return t ? 'Resposta social inicial: entendi sua situacao. Evite enviar dados sensiveis. Organize o pedido em fatos, necessidade, urgencia e apoio humano adequado. '+(room.summary?'Vou continuar pela memoria desta sala: '+room.summary:'') : 'Escreva uma pergunta ou situacao para receber apoio social inicial.'; }
+  async function callCharlieSocial(t){ try{ answer('Conectando com a API segura da Charlie Echo Social...'); const room=activeRoom(); const response=await fetch('https://charlieecho.jus9tecnologia.com.br/api/ia',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:context(t),mode:'social',room:{title:room.title,summary:room.summary,currentTopic:room.currentTopic,lastUserIntent:room.lastUserIntent,messages:(room.messages||[]).slice(-16)}})}); const data=await response.json().catch(()=>null); if(response.ok&&data&&typeof data.answer==='string'&&data.answer.trim()){ answer(data.answer.trim()); remember(t,data.answer.trim()); return; } const fb=fallbackSocial(t)+'\n\nObservacao: API indisponivel ou sem resposta textual reconhecida; mantive fallback local.'; answer(fb); remember(t,fb); }catch(error){ const fb=fallbackSocial(t)+'\n\nObservacao: API indisponivel; mantive fallback local.'; answer(fb); remember(t,fb); } }
+  document.querySelectorAll('[data-action]').forEach(btn=>btn.addEventListener('click',()=>{ const a=btn.dataset.action,t=base(); if(a==='limpar')return clean(); if(a==='falar')return answer('Entrada por voz sera conectada em etapa segura. Por ora, escreva sua pergunta no campo.'); if(a==='organizar')return answer('Vamos organizar com prudencia: 1) o que aconteceu; 2) o que voce precisa; 3) quem pode ajudar humanamente; 4) quais documentos ou informacoes publicas sao uteis; 5) qual proximo passo seguro.'); if(a==='humano')return answer('Pergunta para atendimento humano: "Ola, preciso de orientacao sobre a seguinte situacao: [resumo]. Quais documentos devo levar e qual e o proximo passo adequado?"'); if(a==='links')return answer(externalLinksGuidance()); if(a==='perguntar')return t?callCharlieSocial(t):answer(fallbackSocial(t)); }));
   input&&input.addEventListener('keydown',e=>{ if(e.key==='Enter'&&!e.shiftKey){ e.preventDefault(); document.querySelector('[data-action="perguntar"]').click(); }});
+  initRooms();
 })();

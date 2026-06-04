@@ -10,3 +10,7 @@ button,input,select,textarea{max-width:100%}
   .grid,.grid2,.grid-2,.grid-3,.grid-4,.cards3,.profile-grid,.demo-grid,.demo-grid-2,.workbench,.timeline,.footer-grid{grid-template-columns:1fr!important;}
   table{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
 }
+
+/* Charlie Echo Social rooms v1.1 */
+.chat-room-panel{display:grid;gap:12px;margin:14px 0;padding:16px;border:1px solid rgba(30,117,67,.24);border-radius:18px;background:#f4fff6;color:#0b1728}
+.chat-room-panel p{margin:4px 0 0;color:#425568}.chat-room-actions,.chat-room-list{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.chat-room-pill{border:1px solid rgba(15,23,42,.14);border-radius:999px;padding:8px 12px;background:#fff;color:#0b1728;font-weight:850;cursor:pointer}.chat-room-pill.active{background:#176b38;color:#fff;border-color:#176b38}.chat-room-pill.archived{opacity:.68;border-style:dashed;background:#eef7ef}
