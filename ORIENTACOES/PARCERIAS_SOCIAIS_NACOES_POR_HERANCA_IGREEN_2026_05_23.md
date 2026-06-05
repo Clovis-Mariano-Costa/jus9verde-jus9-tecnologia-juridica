@@ -9,7 +9,7 @@
 
 ## 1. Decisão do Fundador
 
-Neste pacote, **não programar diretamente nada envolvendo Nações Por Herança**.
+Nota de atualização em 2026-06-05: a orientação original deste pacote dizia para não programar diretamente Nações Por Herança. Essa cautela foi preservada para dados sensíveis e domínio definitivo, mas a Jus9 Verde passou a publicar apenas o link público provisório já disponível no GitHub Pages do Fundador: `https://clovis-mariano-costa.github.io/nacoes-por-heranca/`.
 
 A atuação aqui é apenas preparar a Jus9 Verde para falar, de modo prudente e institucional, sobre parcerias sociais em implantação.
 
@@ -33,7 +33,9 @@ Status público recomendado:
 
 Endereço pretendido informado pelo Fundador:
 
-`www.nacoesporheranca.gov.br`
+`https://clovis-mariano-costa.github.io/nacoes-por-heranca/`
+
+O endereço acima é a presença pública provisória publicada no GitHub Pages do Fundador. Domínio definitivo, dados institucionais finais e eventual endereço próprio ainda dependem de conferência humana, autorização final e revisão de publicação.
 
 Observação obrigatória:
 
@@ -45,7 +47,7 @@ Observação obrigatória:
 
 Texto-base para página ou seção futura:
 
-> A Jus9 Verde acompanha a preparação institucional da Associação Social Nações Por Herança como parceria social em fase de implantação. A proposta está ligada a resgate, tratamento, reinserção social, projetos de apoio, parcerias com empresas e organização de presença digital responsável. O endereço pretendido informado é `www.nacoesporheranca.gov.br`, ainda dependente de implantação, revisão humana, confirmação de dados oficiais e autorização final.
+> A Jus9 Verde acompanha a preparação institucional da Associação Social Nações Por Herança como parceria social em fase de implantação. A proposta está ligada a resgate, tratamento, reinserção social, projetos de apoio, parcerias com empresas e organização de presença digital responsável. A presença pública provisória está publicada em `https://clovis-mariano-costa.github.io/nacoes-por-heranca/`, ainda sujeita a revisão humana, confirmação de dados oficiais e autorização final para domínio definitivo.
 
 Versão curta:
 
@@ -86,7 +88,7 @@ Não publicar ainda:
 - vídeos ou imagens sem autorização;
 - diretoria desatualizada;
 - endereço, telefone ou e-mail não confirmados;
-- site `www.nacoesporheranca.gov.br` como se já estivesse publicado e definitivo.
+- tratar domínio definitivo futuro como se já estivesse publicado e definitivo.
 
 ---
 
@@ -95,7 +97,7 @@ Não publicar ainda:
 Antes de transformar esta preparação em página pública ou bloco visível na Jus9 Verde, confirmar:
 
 1. Nome público oficial: Associação Social Nações Por Herança, Desafio Jovem Nações Por Herança, ou ambos em hierarquia.
-2. Endereço pretendido e status real de `www.nacoesporheranca.gov.br`.
+2. Status real do endereço provisório `https://clovis-mariano-costa.github.io/nacoes-por-heranca/` e eventual domínio definitivo futuro.
 3. Local provisório no GitHub do Fundador que pode ser mencionado, se houver autorização.
 4. WhatsApp oficial.
 5. E-mail oficial.
@@ -132,7 +134,7 @@ Quando houver autorização humana, a parceria pode aparecer em:
 Modelo de card futuro:
 
 > **Nações Por Herança**  
-> Parceria social em implantação, voltada a resgate, tratamento, reinserção social, apoio comunitário e organização institucional responsável. Endereço pretendido: `www.nacoesporheranca.gov.br`, ainda em preparação.
+> Parceria social em implantação, voltada a resgate, tratamento, reinserção social, apoio comunitário e organização institucional responsável. Endereço público provisório: `https://clovis-mariano-costa.github.io/nacoes-por-heranca/`, com domínio definitivo ainda sujeito a conferência humana e autorização final.
 
 Modelo de card iGreen:
 

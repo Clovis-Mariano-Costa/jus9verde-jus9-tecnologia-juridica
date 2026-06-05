@@ -13,6 +13,7 @@ Regra geral: sempre que uma palavra pública relevante aparecer em página, roda
 - Charlie Echo Social → https://jus9verde.jus9tecnologia.com.br/charlie-echo-social
 - Inteligência Artificial CRETA → https://jus9verde.jus9tecnologia.com.br/charlie-echo-social
 - Jus9 Verde → https://jus9verde.jus9tecnologia.com.br/
+- Nações Por Herança → https://clovis-mariano-costa.github.io/nacoes-por-heranca/
 - Livros → https://livros.jus9tecnologia.com.br/
 - Carta → https://carta.jus9tecnologia.com.br/
 - Política de Privacidade → rota de privacidade do respectivo site

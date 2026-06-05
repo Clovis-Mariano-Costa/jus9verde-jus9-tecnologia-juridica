@@ -1,4 +1,4 @@
-const CACHE_NAME = 'jus9verde-pwa-v2-2026-06-01';
+const CACHE_NAME = 'jus9verde-pwa-v2-2026-06-05-nacoes-heranca';
 const CORE_ASSETS = [
   '/',
   '/index.html',
