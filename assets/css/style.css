@@ -22,6 +22,50 @@ a:hover{text-decoration:underline}
 .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--verde-profundo)}
 .brand img{width:46px;height:46px;border-radius:14px}
 .links{display:flex;gap:18px;align-items:center;flex-wrap:wrap;font-size:.95rem}
+.ecosystem-shell{
+  width:min(1120px,92%);
+  margin:18px auto 0;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:18px;
+  align-items:center;
+  border:1px solid rgba(31,111,70,.18);
+  border-radius:24px;
+  padding:16px 18px;
+  background:rgba(255,255,255,.82);
+  box-shadow:0 16px 46px rgba(18,61,42,.10);
+}
+.ecosystem-shell strong{display:block;color:var(--verde-profundo);font-size:1.02rem}
+.ecosystem-shell span{color:#53665b;line-height:1.5}
+.ecosystem-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.ecosystem-actions a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:38px;
+  border:1px solid rgba(31,111,70,.18);
+  border-radius:999px;
+  padding:8px 12px;
+  background:#fff;
+  color:var(--verde-profundo);
+  font-weight:800;
+  text-decoration:none;
+}
+.ecosystem-actions a.primary{background:var(--verde-profundo);color:#e7ffe9;border-color:var(--verde-profundo)}
+.green-app-status{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+  margin-top:18px;
+}
+.green-app-status .status-item{
+  border:1px solid rgba(31,111,70,.14);
+  border-radius:18px;
+  padding:14px;
+  background:#fff;
+}
+.green-app-status b{display:block;color:var(--verde-profundo);margin-bottom:4px}
+.green-app-status small{color:#617267;line-height:1.45}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:12px 18px;background:var(--verde-floresta);color:#fff;font-weight:700;box-shadow:0 10px 30px rgba(31,111,70,.25)}
 .btn.gold{background:var(--dourado);color:#1c261f}
 .btn.light{background:var(--verde-claro);color:var(--verde-profundo);box-shadow:none}
@@ -76,7 +120,7 @@ h3{color:var(--verde-profundo)}
 .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
 .small{font-size:.92rem;color:var(--muted);line-height:1.65}
 .footer .small{color:#bed5c7}
-@media(max-width:800px){.hero-grid,.grid-2,.grid-3,.footer-grid,.app-jus9-principal-card{grid-template-columns:1fr}.links{display:none}.hero{padding-top:48px}.app-jus9-principal-symbol{display:none}}
+@media(max-width:800px){.hero-grid,.grid-2,.grid-3,.footer-grid,.app-jus9-principal-card,.ecosystem-shell,.green-app-status{grid-template-columns:1fr}.links{display:none}.hero{padding-top:48px}.app-jus9-principal-symbol{display:none}.ecosystem-actions{justify-content:stretch;display:grid;grid-template-columns:1fr 1fr}.ecosystem-actions a{text-align:center}}
 
 /* Pacote mobile Samsung - responsividade Jus 9 */
 html,body{max-width:100%;overflow-x:hidden}
