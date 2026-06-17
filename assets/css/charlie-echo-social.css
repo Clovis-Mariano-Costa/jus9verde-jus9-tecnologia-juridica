@@ -23,3 +23,34 @@ button,input,select,textarea{max-width:100%}
 /* Charlie Echo Social rooms v1.1 */
 .chat-room-panel{display:grid;gap:12px;margin:14px 0;padding:16px;border:1px solid rgba(30,117,67,.24);border-radius:18px;background:#f4fff6;color:#0b1728}
 .chat-room-panel p{margin:4px 0 0;color:#425568}.chat-room-actions,.chat-room-list{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.chat-room-pill{border:1px solid rgba(15,23,42,.14);border-radius:999px;padding:8px 12px;background:#fff;color:#0b1728;font-weight:850;cursor:pointer}.chat-room-pill.active{background:#176b38;color:#fff;border-color:#176b38}.chat-room-pill.archived{opacity:.68;border-style:dashed;background:#eef7ef}
+
+/* Pacote visual 4.2 - atendimento social leve */
+.notice,.card,.chat-card,.chat-room-panel,.response{
+  border-radius:8px;
+}
+.button,button,.social-shell-actions a,.chat-room-pill{
+  border-radius:8px;
+  min-height:40px;
+}
+.chat-card textarea,
+textarea{
+  border-radius:8px;
+  transition:border-color .16s ease, box-shadow .16s ease, background .16s ease;
+}
+.chat-card textarea:focus,
+textarea:focus{
+  outline:none;
+  border-color:var(--green2);
+  box-shadow:0 0 0 4px rgba(15,143,100,.13);
+  background:#fff;
+}
+.response{
+  max-height:min(58vh,560px);
+  overflow:auto;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+}
+@media(max-width:760px){
+  .social-shell-actions{grid-template-columns:1fr}
+  .button,button{width:100%}
+}
